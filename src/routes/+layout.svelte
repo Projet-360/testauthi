@@ -9,7 +9,8 @@
   <Footer />
 </div>
 
-<style>
+<style lang="scss" global>
+  @import './src/styles/main';
   :global(body) {
     font-family:
       ui-sans-serif,
