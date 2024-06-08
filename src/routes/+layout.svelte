@@ -3,7 +3,7 @@
 	import { onNavigate } from '$app/navigation';
 
 	import App from '$lib/js/index';
-	import { registerServiceWorker } from '$UITools/serviceWorker';
+	//import { registerServiceWorker } from '$UITools/serviceWorker';
 	import Head from '$components/Head.svelte';
 
 	import Loader from '$UITools/InitialLoader/index.svelte';
@@ -53,7 +53,7 @@
 
 	onMount(async () => {
 		new App();
-		registerServiceWorker();
+		//registerServiceWorker();
 		// Détermine le premier chargement de l'application
 		setFirstOpen(true);
 		setRessourceToValide(true);
