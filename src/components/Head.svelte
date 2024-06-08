@@ -1,15 +1,14 @@
 <script lang="ts">
   import { page } from '$app/stores'
   import DarkMode from '$UITools/DarkMode/index.svelte'
-  import { SignIn, SignOut } from '@auth/sveltekit/components'
-
+  import { t, locale, locales } from '$UITools/Translations/index'
+  
   import FullScreen from './FullScreen.svelte'
 
   const handleChange = (event: Event) => {
     const currentTarget = event.currentTarget as HTMLSelectElement // Cast ici si vous êtes sûr que c'est un élément select
     const { value } = currentTarget
 
-    
     document.cookie = `lang=${value};`
     location.reload()
   }
@@ -43,7 +42,18 @@
   </nav>
 
   <div class="left-side">
-    
+    <label for="localeSelect">{$t('data.language')}</label>
+    <select
+      id="localeSelect"
+      name="locale"
+      bind:value="{$locale}"
+      on:change="{handleChange}"
+    >
+      {#each $locales as value}
+        <option value="{value}">{$t(`data.${value}`)}</option>
+      {/each}
+    </select>
+
     <DarkMode />
 
     <FullScreen />
