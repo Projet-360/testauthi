@@ -9,6 +9,7 @@
     const currentTarget = event.currentTarget as HTMLSelectElement // Cast ici si vous êtes sûr que c'est un élément select
     const { value } = currentTarget
 
+    
     document.cookie = `lang=${value};`
     location.reload()
   }
