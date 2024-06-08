@@ -58,7 +58,7 @@ export default defineConfig({
 			$language: 'src/language',
 			$three: 'src/lib/components/three',
 			$services: 'src/services',
-			$lib: "src/components",
+			$lib: "src/lib",
 			$api: 'src/api',
 			$routes: "src/routes"
 		}
